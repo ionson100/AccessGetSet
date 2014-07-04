@@ -20,7 +20,7 @@ namespace AccessGetSet.Test
 
     public class TestBase
     {
-          public int Id { get; set; }
+            public int Id { get; set; }
     }
 
     public class TestIon:TestBase
