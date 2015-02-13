@@ -29,7 +29,7 @@ namespace AccessGetSet
         static readonly Lazy<Dictionary<string, Action<T, object>>> AccessSetPropertys = new Lazy<Dictionary<string, Action<T, object>>>(
            () =>
            {
-               var pr = typeof(T).GetProperties().Where(a => !a.GetCustomAttributes(typeof(NotInitializeAttribute), true).Any());
+               var pr = typeof(T).GetProperties().Where(a => !a.IsDefined(typeof(NotInitializeAttribute),true));
                var dictionary = new Dictionary<string, Action<T, object>>();
 
                foreach (var propertyInfo in pr)
